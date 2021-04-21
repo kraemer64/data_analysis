@@ -32,6 +32,11 @@ def calculate(list):
           np.min(numbers, axis=0).tolist(),
           np.min(numbers, axis=1).tolist(),
           np.min(numbers.tolist())
+      ],
+      "sum": [
+          np.sum(numbers, axis=0).tolist(),
+          np.sum(numbers, axis=1).tolist(),
+          np.sum(numbers.tolist())
       ]
   }
 
