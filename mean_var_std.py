@@ -2,10 +2,9 @@ import numpy as np
 
 def calculate(list):
   if len(list) is not 9:
-    raise ValueError('List have to be nine numbers long')
+    raise ValueError('List must contain nine numbers.')
 
   numbers = np.array(list).reshape(3,3)
-  print(numbers)
   
   operations = {
       "mean": [
