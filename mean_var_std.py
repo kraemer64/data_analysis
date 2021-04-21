@@ -5,7 +5,6 @@ def calculate(list):
     raise ValueError('List must contain nine numbers.')
 
   numbers = np.array(list).reshape(3,3)
-  print(numbers)
   
   operations = {
       "mean": [
