@@ -5,4 +5,12 @@ def calculate(list):
     raise ValueError('List have to be nine numbers long')
 
   numbers = np.array(list).reshape(3,3)
-  print(numbers)
+  
+  operations = {
+      "mean": [
+          np.mean(numbers, axis=0).tolist(),
+          np.mean(numbers, axis=1).tolist()
+      ]
+  }
+
+  return operations
