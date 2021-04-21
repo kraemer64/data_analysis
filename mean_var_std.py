@@ -12,6 +12,11 @@ def calculate(list):
           np.mean(numbers, axis=0).tolist(),
           np.mean(numbers, axis=1).tolist(),
           np.mean(numbers.tolist())
+      ],
+      "variance": [
+          np.var(numbers, axis=0).tolist(),
+          np.var(numbers, axis=1).tolist(),
+          np.var(numbers.tolist())
       ]
   }
 
