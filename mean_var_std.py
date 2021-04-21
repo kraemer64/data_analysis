@@ -17,6 +17,11 @@ def calculate(list):
           np.var(numbers, axis=0).tolist(),
           np.var(numbers, axis=1).tolist(),
           np.var(numbers.tolist())
+      ],
+      "standard deviation": [
+          np.std(numbers, axis=0).tolist(),
+          np.std(numbers, axis=1).tolist(),
+          np.std(numbers.tolist())
       ]
   }
 
