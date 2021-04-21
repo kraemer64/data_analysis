@@ -5,6 +5,7 @@ def calculate(list):
     raise ValueError('List must contain nine numbers.')
 
   numbers = np.array(list).reshape(3,3)
+  print(numbers)
   
   operations = {
       "mean": [
@@ -26,6 +27,11 @@ def calculate(list):
           np.max(numbers, axis=0).tolist(),
           np.max(numbers, axis=1).tolist(),
           np.max(numbers.tolist())
+      ],
+      "min": [
+          np.min(numbers, axis=0).tolist(),
+          np.min(numbers, axis=1).tolist(),
+          np.min(numbers.tolist())
       ]
   }
 
