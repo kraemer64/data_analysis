@@ -21,6 +21,11 @@ def calculate(list):
           np.std(numbers, axis=0).tolist(),
           np.std(numbers, axis=1).tolist(),
           np.std(numbers.tolist())
+      ],
+      "max": [
+          np.max(numbers, axis=0).tolist(),
+          np.max(numbers, axis=1).tolist(),
+          np.max(numbers.tolist())
       ]
   }
 
