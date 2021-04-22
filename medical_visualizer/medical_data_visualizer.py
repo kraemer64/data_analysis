@@ -8,10 +8,12 @@ df = pd.read_csv('medical_ecamination.csv')
 
 # Add 'overweight' column
 df['overweight'] = ((df['weight'] / (df['height'] / 100) ** 2) > 25).replace([True, False], [1, 0])
-print(df.head(), '\n')
 
 # Normalize data by making 0 always good and 1 always bad. If the value of 'cholesterol' or 'gluc' is 1, make the value 0. If the value is more than 1, make the value 1.
-
+medical_norm_dict = { 1: 0, 2 : 1, 3: 1}
+df['cholesterol'] = df['cholesterol'].map(medical_norm_dict)
+df['gluc'] = df['gluc'].map(medical_norm_dict)
+print(df.head(10), '\n')
 
 # Draw Categorical Plot
 def draw_cat_plot():
