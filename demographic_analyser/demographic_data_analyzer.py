@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def calculate_demographic_data(print_data=False):
+def calculate_demographic_data(print_data=True):
     # Read data from file
     df = pd.read_csv('adult.data.csv')
     print(df.columns.values, '\n')
@@ -49,7 +49,6 @@ def calculate_demographic_data(print_data=False):
 
     # Identify the most popular occupation for those who earn >50K in India.
     top_IN_occupation = df[(df['salary'] == '>50K') & (df['native-country'] == 'India')]['occupation'].value_counts().keys()[0]
-    print(top_IN_occupation)
 
     # DO NOT MODIFY BELOW THIS LINE
 
@@ -64,7 +63,7 @@ def calculate_demographic_data(print_data=False):
         print("Country with highest percentage of rich:", highest_earning_country)
         print(f"Highest percentage of rich people in country: {highest_earning_country_percentage}%")
         print("Top occupations in India:", top_IN_occupation)
-'''
+
     return {
         'race_count': race_count,
         'average_age_men': average_age_men,
@@ -78,4 +77,3 @@ def calculate_demographic_data(print_data=False):
         highest_earning_country_percentage,
         'top_IN_occupation': top_IN_occupation
     }
-'''
