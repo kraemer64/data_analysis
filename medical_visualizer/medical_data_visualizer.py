@@ -34,7 +34,7 @@ def draw_cat_plot():
 
     # Do not modify the next two lines
     plt.savefig('catplot.png')
-    return plt
+    return plt.gcf()
 
 
 # Draw Heat Map
