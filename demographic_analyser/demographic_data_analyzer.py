@@ -20,8 +20,8 @@ def calculate_demographic_data(print_data=False):
 
     # with and without `Bachelors`, `Masters`, or `Doctorate`
     higher_education = df.loc[df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
-    print(higher_education)
-    lower_education = None
+    lower_education = df.loc[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
+    print(lower_education)
 
     # percentage with salary >50K
     higher_education_rich = None
