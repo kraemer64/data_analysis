@@ -18,19 +18,24 @@ print(df.head(10), '\n')
 # Draw Categorical Plot
 def draw_cat_plot():
     # Create DataFrame for cat plot using `pd.melt` using just the values from 'cholesterol', 'gluc', 'smoke', 'alco', 'active', and 'overweight'.
-    df_cat = None
-
+    df_cat = pd.melt(
+        frame=df, 
+        value_vars=['cholesterol', 'gluc', 'smoke', 'alco', 'active', 'overweight'], 
+        id_vars=['cardio']
+    )
 
     # Group and reformat the data to split it by 'cardio'. Show the counts of each feature. You will have to rename one of the columns for the catplot to work correctly.
-    df_cat = None
+    df_cat = pd.DataFrame(
+        df_cat.groupby(['variable', 'value', 'cardio'])['value'].count()).rename(
+        columns={'value': 'total'}).reset_index()
 
     # Draw the catplot with 'sns.catplot()'
-
-
+    sns.catplot(x='variable', y='total', hue='value', 
+        col='cardio', data=df_cat, kind='bar')
 
     # Do not modify the next two lines
-    fig.savefig('catplot.png')
-    return fig
+    plt.savefig('catplot.png')
+    return plt
 
 
 # Draw Heat Map
