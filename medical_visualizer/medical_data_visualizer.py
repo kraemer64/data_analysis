@@ -6,6 +6,9 @@ import numpy as np
 # Import data
 df = pd.read_csv('medical_ecamination.csv')
 
+print(df.columns.values, '\n')
+print(df.head(), '\n')
+
 # Add 'overweight' column
 df['overweight'] = None
 
