@@ -48,20 +48,20 @@ def draw_heat_map():
         (df['weight'] <= df['weight'].quantile(0.975))]
 
     # Calculate the correlation matrix
-    corr = None
+    corr = df_heat.corr()
 
     # Generate a mask for the upper triangle
-    mask = None
-
-
+    mask = np.zeros_like(corr, dtype=np.bool)
+    mask[np.triu_indices_from(mask)] = True
 
     # Set up the matplotlib figure
-    fig, ax = None
+    fig, ax = plt.subplots(figsize=(11, 9))
 
     # Draw the heatmap with 'sns.heatmap()'
-
-
+    sns.heatmap(corr, linewidths=.5, annot=True, mask=mask, square=True, 
+        vmax=.3, center=0, fmt='.1f', cbar_kws={"shrink": .5})
 
     # Do not modify the next two lines
     fig.savefig('heatmap.png')
     return fig
+    
