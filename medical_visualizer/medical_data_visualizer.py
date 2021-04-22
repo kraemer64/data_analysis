@@ -13,7 +13,6 @@ df['overweight'] = ((df['weight'] / (df['height'] / 100) ** 2) > 25).replace([Tr
 medical_norm_dict = { 1: 0, 2 : 1, 3: 1}
 df['cholesterol'] = df['cholesterol'].map(medical_norm_dict)
 df['gluc'] = df['gluc'].map(medical_norm_dict)
-print(df.head(10), '\n')
 
 # Draw Categorical Plot
 def draw_cat_plot():
@@ -64,4 +63,3 @@ def draw_heat_map():
     # Do not modify the next two lines
     fig.savefig('heatmap.png')
     return fig
-    
