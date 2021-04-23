@@ -53,10 +53,7 @@ def draw_box_plot():
     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
     # Draw box plots (using Seaborn)
-
-
-
-
+    fig, ax = plt.subplots(1, 2, figsize=(20,7), dpi= 80)
 
     # Save image and return fig (don't change this part)
     fig.savefig('box_plot.png')
