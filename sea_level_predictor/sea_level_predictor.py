@@ -21,7 +21,18 @@ def draw_plot():
     plt.plot(x_line, sea_slope * x_line + sea_incept, color="red")
 
     # Create second line of best fit
+    df_y2000 = df[df['Year'] >= 2000]
 
+    x = df_y2000['Year']
+    y = df_y2000['CSIRO Adjusted Sea Level']
+
+    sea_stats = linregress(x, y)
+    sea_incept = sea_stats.intercept
+    sea_slope = sea_stats.slope
+
+    x_line = range(2000, 2050)
+
+    plt.plot(x_line, sea_slope * x_line + sea_incept, color="yellow")
 
     # Add labels and title
 
