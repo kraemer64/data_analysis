@@ -9,15 +9,18 @@ df = pd.read_csv("fcc-forum-pageviews.csv").set_index('date')
 df.index = pd.to_datetime(df.index)
 
 # Clean data
-df = None
+df = df[(df.value >= df.value.quantile(0.025)) & 
+    (df.value <= df.value.quantile(0.975))]
 
 
 def draw_line_plot():
     # Draw line plot
+    fig, ax = plt.subplots(figsize = (12, 4))
+    df.plot(ax = ax)
 
-
-
-
+    ax.set(title = "Daily freeCodeCamp Forum Page Views 5/2016-12/2019", 
+       xlabel="Date", 
+       ylabel="Page Views")
 
     # Save image and return fig (don't change this part)
     fig.savefig('line_plot.png')
