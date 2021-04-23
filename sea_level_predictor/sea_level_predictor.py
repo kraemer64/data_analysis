@@ -21,7 +21,7 @@ def draw_plot():
     plt.plot(x_line, sea_slope * x_line + sea_incept, color="red")
 
     # Create second line of best fit
-    df_y2000 = df[df['Year'] >= 2000]
+    df_y2000 = sea_df[sea_df['Year'] >= 2000]
 
     x = df_y2000['Year']
     y = df_y2000['CSIRO Adjusted Sea Level']
@@ -35,7 +35,9 @@ def draw_plot():
     plt.plot(x_line, sea_slope * x_line + sea_incept, color="yellow")
 
     # Add labels and title
-
+    plt.title('Rise in Sea Level')
+    plt.xlabel('Year')
+    plt.ylabel('Sea Level (inches)')
     
     # Save plot and return data for testing (DO NOT MODIFY)
     plt.savefig('sea_level_plot.png')
