@@ -55,6 +55,12 @@ def draw_box_plot():
     # Draw box plots (using Seaborn)
     fig, ax = plt.subplots(1, 2, figsize=(20,7), dpi= 80)
 
+    sns.boxplot(x='year', y='value', ax=ax[0], data=df_box).set(
+        title='Year-wise Box Plot (Trend)',
+        xlabel='Year', 
+        ylabel='Page Views'
+    )
+
     # Save image and return fig (don't change this part)
     fig.savefig('box_plot.png')
     return fig
