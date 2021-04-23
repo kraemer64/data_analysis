@@ -28,13 +28,11 @@ def draw_line_plot():
 
 def draw_bar_plot():
     # Copy and modify data for monthly bar plot
-    df_bar = df.copy().groupby([df.index.year, df.index.month]).mean()
+    bar_df = df.copy().groupby([df.index.year, df.index.month]).mean()
 
     # Draw bar plot
-
-
-
-
+    ax = bar_df.unstack().plot(kind='bar')
+    fig = ax.get_figure()
 
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
