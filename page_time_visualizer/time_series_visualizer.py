@@ -38,6 +38,9 @@ def draw_bar_plot():
         'May', 'June', 'July', 'August', 'September', 'October', 'November', 
         'December'])
 
+    ax.set(xlabel = "Years", ylabel = "Average Page Views")
+    fig = ax.get_figure()
+
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
     return fig
