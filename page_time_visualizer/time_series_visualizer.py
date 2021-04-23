@@ -34,6 +34,10 @@ def draw_bar_plot():
     ax = bar_df.unstack().plot(kind='bar')
     fig = ax.get_figure()
 
+    ax.legend(title = "Months", labels = ['January', 'February', 'March', 'April',  
+        'May', 'June', 'July', 'August', 'September', 'October', 'November', 
+        'December'])
+
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
     return fig
