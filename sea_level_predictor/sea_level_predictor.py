@@ -12,7 +12,13 @@ def draw_plot():
     plt.scatter(x, y, c="b", s=10, alpha=0.5)
 
     # Create first line of best fit
+    sea_stats = linregress(x, y)
+    sea_incept = sea_stats.intercept
+    sea_slope = sea_stats.slope
 
+    x_line = range(1880, 2050)
+
+    plt.plot(x_line, sea_slope * x_line + sea_incept, color="red")
 
     # Create second line of best fit
 
